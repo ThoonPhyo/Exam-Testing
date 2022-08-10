@@ -1,0 +1,334 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <conio.h>
+void printTitle(char a[30]);
+
+
+int main() {
+    int grade=0;
+    char name[30];
+    int  RollNo=0;
+    char section;
+    char month[10];
+    int Myan=0;
+    int Eng=0;
+    int Math=0;
+    int Phy=0;
+    int Che=0;
+    int BorE=0;
+    int major=0;
+    int next=0;
+    char exam[10];
+    int Y=0;
+    int Myanm=0;
+    int Engl=0;
+    int Mathe=0;
+    int Phy1=0;
+    int Chem=0;
+    int BorE1=0;
+    int See=0;
+    int s=0;
+
+
+
+     FILE *fptr;
+
+    printf("Please Enter Student Profile\n\n");
+    fptr= fopen("Student Profile.txt","w");//file open
+    printf("Enter your Student's Name =");
+    scanf("%[^\n]",name);//[^\n]=format specifier
+    fprintf(fptr,"Name =%s\n",name);
+    printf("Enter Your Student's Roll No =");
+    scanf("%d",&RollNo);
+    fprintf(fptr,"Roll No = %d\n",RollNo);
+    printf("Enter Your Student's Grade =");
+    scanf("%d",&grade);
+    fprintf(fptr,"Grade =%d\n",grade);
+    printf("Exam Name :: ");
+    scanf("%s",month);
+    fprintf(fptr,"\n--**Exam Time :: %s**--\n",month);
+    printf ("               Please Fill %s's Exam marks\n",name);
+
+
+    // fptr= fopen("Student Profile.txt","a");
+    printf("Myanmar :");
+    scanf("%d",&Myan);
+    fprintf(fptr,"Myanmar ::%d\n ",Myan);
+    printf("English :");
+    scanf("%d",&Eng);
+    fprintf(fptr,"English ::%d\n ",Eng);
+
+    printf("Mathematics :");
+    scanf("%d",&Math);
+    fprintf(fptr,"Mathematics ::%d\n ",Math);
+    printf("Physics :");
+    scanf("%d",&Phy);
+    fprintf(fptr,"Physics ::%d\n ",Phy);
+    printf("Chemistry :");
+    scanf("%d",&Che);
+    fprintf(fptr,"Chemistry ::%d\n ",Che);
+    printf("!*Choice your major Bio/Eco (press1/2):");
+    scanf("%d",&major);
+    if(major==1){
+        printf("Biology :");
+        scanf("%d",&BorE);
+        fprintf(fptr,"Biology ::%d\n ",BorE);}
+    else{
+        printf("Econormic :");
+        scanf("%d",&BorE);
+        fprintf(fptr,"Econormic ::%d\n ",BorE);}
+
+
+    printf ("Are you sure to show %s's %s Exam Result[1=Yes,2=No]",name,month);
+       scanf("%d",&Y);
+       system("cls");
+    //printf("        --**%s Exam**--\n",month);
+    if(Y==1){printTitle(" Exam Result ");
+        if(Myan<0||Myan>100){printf("Something Worng\n");}
+    else if(Myan<40){printf("Myanmar : D\n");}
+    else if(Myan>=40&&Myan<60){printf("Myanmar : C\n");}
+    else if(Myan>=60&&Myan<80){printf("Myanmar : B\n");}
+    else if(Myan>=80&&Myan<=100){printf("Myanmar : A\n");}
+
+    if(Eng<0||Eng>100){printf("Something Worng\n");}
+    else if(Eng<40){printf("English : D\n");}
+    else if(Eng>=40&&Eng<60){printf("English : C\n");}
+    else if(Eng>=60&&Eng<80){printf("English : B\n");}
+    else if(Eng>=80&&Eng<=100){printf("English : A\n");}
+
+    if(Math<0||Math>100){printf("Something Worng\n");}
+    else if(Math<40){printf("Mathematics : D\n");}
+    else if(Math>=40&&Math<60){printf("Mathematics : C\n");}
+    else if(Math>=60&&Math<80){printf("Mathematics : B\n");}
+    else if(Math>=80&&Math<=100){printf("Mathematics : A\n");}
+
+    if(Phy<0||Phy>100){printf("Something Worng\n");}
+    else if(Phy<40){printf("Physics : D\n");}
+    else if(Phy>=40&&Phy<60){printf("Physics : C\n");}
+    else if(Phy>=60&&Phy<80){printf(" Physics : B\n");}
+    else if(Phy>=80&&Phy<=100){printf("Physics : A\n");}
+
+    if(Che<0||Che>100){printf("Something Worng\n");}
+    else if(Che<40){printf("Chemistry : D\n");}
+    else if(Che>=40&&Che<60){printf("Chemistry : C\n");}
+    else if(Che>=60&&Che<80){printf("Chemistry : B\n");}
+    else if(Che>=80&&Che<=100){printf("Chemistry : A\n");}
+if(major==1){
+    if(BorE<0||BorE>100){printf("Something Worng\n");}
+    else if(BorE<40){printf("Biology : D\n");}
+    else if(BorE>=40&&BorE<60){printf("Biology : C\n");}
+    else if(BorE>=60&&BorE<80){printf("Biology : B\n");}
+    else if(BorE>=80&&BorE<=100){printf("Biology : A\n");}}
+else{
+    if(BorE<0||BorE>100){printf("Something Worng\n");}
+    else if(BorE<40){printf("Econormics : D");}
+    else if(BorE>=40&&BorE<60){printf("Econormics : C");}
+    else if(BorE>=60&&BorE<80){printf("Econormics : B");}
+    else if(BorE>=80&&BorE<=100){printf("Econormics : A");}}}
+
+    printf ("!!!%s's %s exam results!!!\n",name,month);//second examo
+    printf("You want to continue to next exam(y=1,n=2)");
+    scanf("%d",&next);
+system("cls");
+    if(next==1){printf("Exam Name :: ");
+    scanf("%s",exam);
+//fclose(fptr);                                        //file close
+    //fptr= fopen("Student Profile.txt","a");//file open
+    fprintf(fptr,"\n--**Exam Name :: %s**--\n",exam);
+
+    printf("Myanmar :");
+    scanf("%d",&Myanm);
+    fprintf(fptr,"Myanmar ::%d\n ",Myanm);
+    printf("English :");
+    scanf("%d",&Engl);
+    fprintf(fptr,"English ::%d\n ",Engl);
+    printf("Mathematics :");
+    scanf("%d",&Mathe);
+    fprintf(fptr,"Mathematics ::%d\n ",Mathe);
+    printf("Physics :");
+    scanf("%d",&Phy1);
+    fprintf(fptr,"Physics ::%d\n ",Phy1);
+    printf("Chemistry :");
+    scanf("%d",&Chem);
+    fprintf(fptr,"Chemistry ::%d\n ",Chem);
+   // printf("!*Choice your major Bio/Eco (press1/2):");
+    //scanf("%d",&major);
+    if(major==1){
+        printf("Biology :");
+        scanf("%d",&BorE1);
+        fprintf(fptr,"Biology ::%d \n\n",BorE1);}//error have in file
+    else{
+        printf("Econormic :");
+        scanf("%d",&BorE1);
+        fprintf(fptr,"Econormic ::%d\n\n ",BorE1);}//error have in file
+    fclose(fptr);                                        //file close
+
+    printf ("Are you sure to show %s's %s Exam Result [1=Yes,2=No]",name,exam);
+    scanf("%d",&Y);
+system("cls");
+    //printf("        --**%s Exam**--\n",month);
+    if(Y==1){printTitle(" Exam Result ");
+
+
+
+
+
+        if(Myan<0||Myanm>100){printf("Something Worng\n");}
+        else if(Myanm<40){printf("Myanmar : D\n");}
+        else if(Myanm>=40&&Myanm<60){printf("Myanmar : C\n");}
+        else if(Myanm>=60&&Myanm<80){printf("Myanmar : B\n");}
+        else if(Myanm>=80&&Myanm<=100){printf("Myanmar : A\n");}
+
+        if(Eng<0||Engl>100){printf("Something Worng\n");}
+        else if(Engl<40){printf("English : D\n");}
+        else if(Engl>=40&&Engl<60){printf("English : C\n");}
+        else if(Engl>=60&&Engl<80){printf("English : B\n");}
+        else if(Engl>=80&&Engl<=100){printf("English : A\n");}
+
+        if(Math<0||Mathe>100){printf("Something Worng\n");}
+        else if(Mathe<40){printf("Mathematics : D\n");}
+        else if(Mathe>=40&&Mathe<60){printf("Mathematics : C\n");}
+        else if(Mathe>=60&&Mathe<80){printf("Mathematics : B\n");}
+        else if(Mathe>=80&&Mathe<=100){printf("Mathematics : A\n");}
+
+        if(Phy<0||Phy1>100){printf("Something Worng\n");}
+        else if(Phy1<40){printf("Physics : D\n");}
+        else if(Phy1>=40&&Phy1<60){printf("Physics : C\n");}
+        else if(Phy1>=60&&Phy1<80){printf(" Physics : B\n");}
+        else if(Phy1>=80&&Phy1<=100){printf("Physics : A\n");}
+
+        if(Che<0||Chem>100){printf("Something Worng\n");}
+        else if(Chem<40){printf("Chemistry : D\n");}
+        else if(Chem>=40&&Chem<60){printf("Chemistry : C\n");}
+        else if(Chem>=60&&Chem<80){printf("Chemistry : B\n");}
+        else if(Chem>=80&&Chem<=100){printf("Chemistry : A\n");}
+
+
+        if(major==1){
+            if(BorE1<0||BorE1>100){printf("Something Worng\n");}
+            else if(BorE1<40){printf("Biology : D\n");}
+            else if(BorE1>=40&&BorE1<60){printf("Biology : C\n");}
+            else if(BorE1>=60&&BorE1<80){printf("Biology : B\n");}
+            else if(BorE1>=80&&BorE1<=100){printf("Biology : A\n");}}
+        else{
+            if(BorE1<0||BorE1>100){printf("Something Worng\n");}
+            else if(BorE1<40){printf("Econoormics : D\n");}
+            else if(BorE1>=40&&BorE1<60){printf("Econormics : C\n");}
+            else if(BorE1>=60&&BorE1<80){printf("Econormics : B\n");}
+            else if(BorE1>=80&&BorE1==100){printf("Econormics : A\n");}}
+            printf ("!!!%s's %s exam results!!!\n",name,exam);}
+int FR=0;
+    printf ("Are you sure to show %s's Final Result [yes,1&No,2]",name);
+    scanf("%d",&FR);
+    system("cls");
+    if(FR==1){printTitle("Final Exam Result");
+   int MM=(Myan+Myanm)/2;
+   int  ENG=(Eng+Engl)/2;
+   int   MATH=(Math+Mathe)/2;
+   int   PHY=(Phy+Phy1)/2;
+   int   CHE=(Che+Chem)/2;
+   int   BORE=(BorE+BorE1)/2;
+   int Totalresult =MM+ENG+PHY+CHE+BORE;
+        if(MM>=40&&ENG>=40&&MATH>=40&&PHY>=40&&CHE>=40&&BORE>=40){printf("**###Success###**\n");}else{printf("Failed!!\n");}
+        printf ("You See your Result of each Subject(Y=1/N=2)");
+        scanf("%d",&See);
+        if(See==1){
+
+    if(MM<0||MM>100){printf("Something Worng\n");}
+    else if(MM<40){printf("Myanmar : D\n");}
+    else if(MM>=40&&MM<60){printf("Myanmar : C\n");}
+    else if(MM>=60&&MM<80){printf("Myanmar : B\n");}
+    else if(MM>=80&&MM<=100){printf("Myanmar : A\n");}
+
+    if(Eng<0||ENG>100){printf("Something Worng\n");}
+    else if(ENG<40){printf("English : D\n");}
+    else if(ENG>=40&&ENG<60){printf("English : C\n");}
+    else if(ENG>=60&&ENG<80){printf("English : B\n");}
+    else if(ENG>=80&&ENG<=100){printf("English : A\n");}
+
+    if(MATH<0||MATH>100){printf("Something Worng\n");}
+    else if(MATH<40){printf("Mathematics : D\n");}
+    else if(MATH>=40&&MATH<60){printf("Mathematics : C\n");}
+    else if(MATH>=60&&MATH<80){printf("Mathematics : B\n");}
+    else if(MATH>=80&&MATH<=100){printf("Mathematics : A\n");}
+
+    if(Phy<0||Phy1>100){printf("Something Worng\n");}
+    else if(Phy1<40){printf("Physics : D\n");}
+    else if(Phy1>=40&&Phy1<60){printf("Physics : C\n");}
+    else if(Phy1>=60&&Phy1<80){printf(" Physics : B\n");}
+    else if(Phy1>=80&&Phy1<=100){printf("Physics : A\n");}
+
+    if(Che<0||Chem>100){printf("Something Worng\n");}
+    else if(Chem<40){printf("Chemistry : D\n");}
+    else if(Chem>=40&&Chem<60){printf("Chemistry : C\n");}
+    else if(Chem>=60&&Chem<80){printf("Chemistry : B\n");}
+    else if(Chem>=80&&Chem<=100){printf("Chemistry : A\n");}}
+
+
+    if(major==1){
+        if(BorE1<0||BorE1>100){printf("Something Worng\n");}
+        else if(BorE1<40){printf("Biology : D\n");}
+        else if(BorE1>=40&&BorE1<60){printf("Biology : C\n");}
+        else if(BorE1>=60&&BorE1<80){printf("Biology : B\n");}
+        else if(BorE1>=80&&BorE1<=100){printf("Biology : A\n");}}
+    else{
+        if(BorE1<0||BorE1>100){printf("Something Worng\n");}
+        else if(BorE1<40){printf("Econormics : D\n");}
+        else if(BorE1>=40&&BorE1<60){printf("Econrmics : C\n");}
+        else if(BorE1>=60&&BorE1<80){printf("Econormics : B\n");}
+        else if(BorE1>=80&&BorE1<=100){printf("Econormics : A\n");}}}
+    printf("You want to see Your exam history of SCHOOL YEAR(Yes=1,No=2)::\n\n");
+    scanf("%d",&s);
+    if(s==1){
+
+    char buffer[100000]; // Buffer to store data
+    FILE * stream;
+    stream = fopen("Student Profile.txt", "r");
+    fread(&buffer, sizeof(char), 100000, stream);
+    fclose(stream);
+    // Printing data to check validity
+    printf("Student's Exam Data File\n\n %s ", buffer);
+    }
+    }
+
+return 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void printTitle(char a[30]){
+    int j = 0;
+    printf("%c%c",176,177);
+    for(int i = 0; i <= strlen(a)+7; i++)
+        printf("%c",178);
+    printf("%c%c\n",177,176);
+    printf("%c%c%c%c%c ",176,177,178,177,176);
+    while(a[j]!='\0'){
+        printf("%c",a[j]);
+        j++;
+    }
+    printf(" %c%c%c%c%c\n",176,177,178,177,176);
+    printf("%c%c",176,177);
+    for(int i = 0; i <= strlen(a)+7; i++)
+        printf("%c",178);
+    printf("%c%c\n",177,176);}
